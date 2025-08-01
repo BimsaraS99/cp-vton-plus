@@ -16,20 +16,20 @@ from visualization import board_add_image, board_add_images, save_images
 def get_opt():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--name", default="GMM")
-    # parser.add_argument("--name", default="TOM")
+    #parser.add_argument("--name", default="GMM")
+    parser.add_argument("--name", default="TOM")
 
-    parser.add_argument("--gpu_ids", default="")
+    parser.add_argument("--gpu_ids", default="0")
     parser.add_argument('-j', '--workers', type=int, default=1)
-    parser.add_argument('-b', '--batch-size', type=int, default=4)
+    parser.add_argument('-b', '--batch-size', type=int, default=1)
 
     parser.add_argument("--dataroot", default="data")
 
     # parser.add_argument("--datamode", default="train")
     parser.add_argument("--datamode", default="test")
 
-    parser.add_argument("--stage", default="GMM")
-    # parser.add_argument("--stage", default="TOM")
+    #parser.add_argument("--stage", default="GMM")
+    parser.add_argument("--stage", default="TOM")
 
     # parser.add_argument("--data_list", default="train_pairs.txt")
     parser.add_argument("--data_list", default="test_pairs.txt")
@@ -46,8 +46,8 @@ def get_opt():
     parser.add_argument('--result_dir', type=str,
                         default='result', help='save result infos')
 
-    parser.add_argument('--checkpoint', type=str, default='checkpoints/GMM/gmm_final.pth', help='model checkpoint for test')
-    # parser.add_argument('--checkpoint', type=str, default='checkpoints/TOM/tom_final.pth', help='model checkpoint for test')
+    #parser.add_argument('--checkpoint', type=str, default='checkpoints/GMM/gmm_final.pth', help='model checkpoint for test')
+    parser.add_argument('--checkpoint', type=str, default='checkpoints/TOM/tom_final.pth', help='model checkpoint for test')
 
     parser.add_argument("--display_count", type=int, default=1)
     parser.add_argument("--shuffle", action='store_true',
